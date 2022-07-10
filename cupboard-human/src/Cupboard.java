@@ -1,36 +1,46 @@
 public class Cupboard {
     private int id;
-    private String type; //кухонный, вещевой
+    private int maxVolume; //объем шкафа
+    private int volume; //оставшийся объем шкафа
+    private static int count; //общее количество шкафов
+    private Type type; //кухонный, вещевой
     private boolean hasMirror; //имеется ли зеркало
     private boolean hasLeg; //имеются ли ножки
-    private String color;
 
-    public Cupboard(int id, String color) {
-        this.id = id;
-        this.color = color;
-    }
-
-    public void setType(String type) {
+    public Cupboard(Type type, boolean hasMirror, boolean hasLeg, int maxVolume) {
+        this.id = ++count;
         this.type = type;
-    }
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setHasMirror(boolean hasMirror) {
         this.hasMirror = hasMirror;
+        this.hasLeg = hasLeg;
+        this.maxVolume = maxVolume;
+        this.volume = maxVolume;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public boolean getHasMirror() {
         return this.hasMirror;
     }
 
-    public void setHasLeg(boolean hasLeg) {
-        this.hasLeg = hasLeg;
-    }
-
     public boolean getHasLeg() {
         return this.hasLeg;
+    }
+
+    public Type getType() {
+        return this.type;
+    }
+
+    public int getVolume() {
+        return this.volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public int getMaxVolume() {
+        return this.maxVolume;
     }
 }

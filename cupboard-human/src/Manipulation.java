@@ -1,3 +1,3 @@
 public interface Manipulation {
-    void action();
+    void action(Cupboard cupboard);
 }
