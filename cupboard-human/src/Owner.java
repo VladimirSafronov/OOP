@@ -1,17 +1,16 @@
-public class Owner implements Manipulation {
-    private String name;
+public class Owner extends Human implements Manipulation {
 
     public Owner(String name) {
-        this.name = name;
+        setName(name);
     }
 
     @Override
     public void action(Cupboard cupboard) {
         if (cupboard.getType().equals(Type.KITCHEN)) {
-            System.out.println(this.name + " взял посуду");
+            System.out.println(getName() + " взял посуду");
         }
         if (cupboard.getType().equals(Type.CLOTHING)) {
-            System.out.println(this.name + " взял вещь");
+            System.out.println(getName() + " взял вещь");
         }
     }
 
