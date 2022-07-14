@@ -1,17 +1,16 @@
-public class Child implements Manipulation{
-    private String name;
+public class Child extends Human implements Manipulation{
 
     public Child (String name) {
-        this.name = name;
+        setName(name);
     }
 
     @Override
     public void action(Cupboard cupboard) {
         if (cupboard.getType().equals(Type.KITCHEN)) {
-            System.out.println(this.name + " разбил посуду");
+            System.out.println(getName() + " разбил посуду");
         }
         if (cupboard.getType().equals(Type.CLOTHING)) {
-            System.out.println(this.name + " покатался на двери");
+            System.out.println(getName() + " покатался на двери");
         }
     }
 }
